@@ -1,0 +1,76 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+#bg-color {
+  background-color: var(--clr);
+}
+
+.lesson-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 300px;
+  gap: 1rem;
+}
+.lesson-box .inputs-block {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 50%;
+  height: 100%;
+  margin: auto;
+}
+.lesson-box .content-box {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  gap: 1rem;
+}
+.lesson-box .content-box .block {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.inputs-block,
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Animation blocks Matrix */
+.lesson-box .inputs-block,
+.lesson-box .content-box,
+.lesson-box .block {
+  transition: all 0.9s ease-in-out;
+}
+.lesson-box .content-box {
+  transition-delay: 0s;
+}
+.lesson-box .block {
+  transition-delay: 0.9s;
+}
+.lesson-box .inputs-block {
+  width: 100%;
+}
+.lesson-box.hide .inputs-block {
+  transition-delay: 0.9s;
+  width: 50%;
+}
+.lesson-box.hide .content-box {
+  transition-delay: 0.9s;
+  width: 0%;
+}
+.lesson-box.hide .block {
+  transition-delay: 0s;
+  transform: scale(0);
+}/*# sourceMappingURL=style.css.map */

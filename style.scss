@@ -1,0 +1,92 @@
+body {
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #f9f9f9;
+   font-size: 2rem;
+   font-weight: 600;
+}
+
+#bg-color {
+   background-color: var(--clr);
+}
+
+.lesson-box {
+   display: flex;
+   justify-content: space-between;
+   align-items: stretch;
+   height: 300px;
+   gap: 1rem;
+
+   .inputs-block {
+      border-radius: 10px;
+      overflow: hidden;
+      width: 50%;
+      height: 100%;
+      margin: auto;
+   }
+
+   .content-box {
+      display: flex;
+      align-items: stretch;
+      width: 100%;
+      gap: 1rem;
+
+      .block {
+         width: 100%;
+         border-radius: 10px;
+         overflow: hidden;
+         text-align: center;
+      }
+   }
+}
+
+.inputs-block,
+.block {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+
+/* Animation blocks Matrix */
+$time-start: 0s;
+$time-end: 0.9s;
+
+.lesson-box {
+   .inputs-block,
+   .content-box,
+   .block {
+      transition: all $time-end ease-in-out;
+   }
+
+   .content-box {
+      transition-delay: $time-start;
+   }
+
+   .block {
+      transition-delay: $time-end;
+   }
+
+   .inputs-block {
+      width: 100%;
+   }
+
+   &.hide {
+      .inputs-block {
+         transition-delay: $time-end;
+         width: 50%;
+      }
+
+      .content-box {
+         transition-delay: $time-end;
+         width: 0%;
+      }
+
+      .block {
+         transition-delay: $time-start;
+         transform: scale(0);
+      }
+   }
+}
