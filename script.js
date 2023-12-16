@@ -4,6 +4,8 @@ const button = document.querySelector('.toggle-class');
 button.addEventListener('click', () => {
    lessonBox.classList.toggle('hide');
 
-   const buttonText = lessonBox.classList.contains('hide') ? 'Show' : 'Hide';
-   button.textContent = buttonText;
+   setTimeout(() => {
+      const buttonText = lessonBox.classList.contains('hide') ? 'Show' : 'Hide';
+      button.textContent = buttonText;
+   }, 2000);
 });
